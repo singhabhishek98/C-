@@ -1,0 +1,77 @@
+class Stack {
+    
+public:
+    
+    vector<int> myStack;
+  
+    int stackSize;
+   
+    int n;
+    
+    Stack(int n) {
+    
+        this -> myStack.resize(n);
+        this -> stackSize = -1;
+        this -> n = n;
+    }
+
+    void push(int num) {
+
+        if(stackSize != n - 1) {
+            
+            // Increment stack size and update array.
+            ++stackSize;
+            myStack[stackSize] = num;
+        }
+    }
+
+    int pop() {
+
+        // Check if stack is not empty.
+        if(stackSize != -1) {
+            
+            // Decrease size and return element.
+            --stackSize;
+            return myStack[stackSize + 1];
+        }
+        else {
+            return -1;
+        }
+    }
+    
+    int top() {
+       .
+        if(stackSize != -1) {
+            
+            return myStack[stackSize];
+        }
+        else {
+            return -1;
+        }
+    }
+
+    int isEmpty() {
+
+        if(stackSize != -1) {
+            
+            return 0;
+        }
+        else {
+            return 1;
+        }        
+    }
+    
+    // To check whether stack is full or not.
+    int isFull() {
+        
+        // Check if stack is not empty.
+        if(stackSize != n - 1) {
+            
+            // Return element.
+            return 0;
+        }
+        else {
+            return 1;
+        }        
+    }
+};
