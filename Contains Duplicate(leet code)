@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_map<int, int> record;
+        
+        for(int i = 0; i < nums.size(); i++){
+            if(!record.count(nums[i])){
+                record.insert(make_pair(nums[i], 0));
+            }else{
+                return true;
+            }
+        }
+        return false;
+    }
+};
