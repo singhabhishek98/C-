@@ -1,0 +1,39 @@
+#include <climits>
+
+vector<int> kthSmallLarge(vector<int> &arr, int n, int k)
+{
+   
+    int kSmall, kLarge;
+
+    for(int i = 1; i <= max(k, n-k+1); i++) 
+    {
+
+        int minIndex = 0; 
+
+      
+        for(int j = 0; j < n; j++) 
+        {
+            if(arr[j] < arr[minIndex]) 
+            {
+                minIndex = j; 
+            }
+        }
+
+        if(i == k) 
+        { 
+            
+            kSmall = arr[minIndex]; 
+        }
+        if(i == n-k+1) 
+        {
+            
+            kLarge = arr[minIndex]; 
+        }
+        
+        arr[minIndex] = INT_MAX;    
+    }
+
+    vector<int> result = {kSmall, kLarge};
+
+    return result;
+}
