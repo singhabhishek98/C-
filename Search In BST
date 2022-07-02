@@ -1,0 +1,20 @@
+/*
+    Time Complexity : O(H)
+    Space Complexity : O(H)
+
+    Where 'H' is the height of the given BST.
+*/
+
+bool searchInBST(BinaryTreeNode<int> *root, int x) {
+    if(root == NULL) {
+        return false;
+    } else if(root->data == x) {
+        return true;
+    } else if(root->data < x) {
+        // Recursively check for right subtree. 
+        return searchInBST(root->right, x);
+    } else {
+        // Recursively check for left subtree. 
+        return searchInBST(root->left, x);
+    }
+}
