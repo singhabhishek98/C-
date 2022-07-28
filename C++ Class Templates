@@ -5,22 +5,22 @@
 #include <algorithm>
 #include <cassert>
 using namespace std;
-
-/*Write the class AddElements here*/
-template <class T>
-class AddElements{
-    T x;
+#define cin ios_base::sync_with_stdio(false);cin.tie(NULL); cin
+template <class T> class AddElements {
     public:
-        AddElements(T a){x=a;}
-        T add(T b){return x+b;}
+        T element;
+        AddElements(T i) {element = i;}
+        T add(T i) {return element+i;}
+    private:
+        
 };
-
-template<>
-class AddElements<string>{
-    string x;
+template <> class AddElements <string> {
     public:
-        AddElements(string a){x=a;}
-        string concatenate(string b){return x+b;}
+        string element;
+        AddElements(string i) {element = i;}
+        string concatenate(string element2) {return element+element2;}
+    private:
+        
 };
 int main () {
   int n,i;
