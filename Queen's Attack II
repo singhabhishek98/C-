@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,k;
+    cin>>n>>k;
+    int rq,cq;
+    cin>>rq>>cq;
+    rq=n-rq;
+    cq=cq-1;
+    int r,c;
+    int der=n-cq-1,aba=n-rq-1, diag_der_arr=min(rq,n-cq-1), diag_der_aba=min(n-cq-1,n-rq-1);
+    int izq=cq ,arr=rq, diag_izq_aba=min(cq,n-rq-1), diag_izq_arr=min(cq,rq);
+    for(int i=0;i<k;i++)
+    {
+        cin>>r>>c;r=n-r;c=c-1;
+        if(r==rq){if(c>cq)der=min(der,c-cq-1);else izq=min(izq,cq-c-1);}
+        if(c==cq){if(r>rq)aba=min(aba,r-rq-1);else arr=min(arr,rq-r-1);}
+        
+        if((r+c)==(rq+cq))
+        {
+            if(r<rq) diag_der_arr=min(diag_der_arr,min(rq-r-1,c-cq-1));    
+            else diag_izq_aba=min(diag_izq_aba,min(r-rq-1,cq-c-1));
+        }
+        if((r-c)==(rq-cq))
+        {
+            if(r>rq) diag_der_aba=min(diag_der_aba,min(r-rq-1,c-cq-1));    
+            else diag_izq_arr=min(diag_izq_arr,min(rq-r-1,cq-c-1));
+        }
+    }
+    int suma=der+aba+diag_der_arr+diag_der_aba+izq+arr+diag_izq_aba+diag_izq_arr;
+    
+    cout<<suma<<"\n";
+}
