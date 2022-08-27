@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string encryption(string s) {
+    double L = sqrt(s.length());
+    int row = floor(L), col = ceil(L);
+
+    if (row == col || (row * col) < s.length())
+        row++;
+
+    string res;
+    for (int x = 0; x < col; x++) {
+
+        string tmp;
+        for (int y = 0; y < row; y++) {
+            int pos = y * col + x;
+            if (pos < s.length()) {
+                tmp += s[pos];
+            }
+        }
+        res += tmp;
+        if (x + 1 < col) res += " ";
+    }
+
+    return res;
+
+}
+
+int main() {
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string s;
+    getline(cin, s);
+
+    string result = encryption(s);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
