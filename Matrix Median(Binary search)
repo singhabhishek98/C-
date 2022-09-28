@@ -8,7 +8,6 @@ int getMedian(vector<vector<int>> &matrix)
 
     vector<int> data;
 
-    // Iterate through matrix and push elements in the vector.
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -19,6 +18,6 @@ int getMedian(vector<vector<int>> &matrix)
 
     sort(data.begin(), data.end());
 
-    // Return the median which is (N*M)/2 th element in the vector.
+   
     return data[(n * m) / 2];
 }
