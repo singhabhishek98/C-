@@ -11,7 +11,7 @@ int main()
     }
 
     int temp;
-    for (i = 0; i < num / 2; i++) {
+    for (i = 0; i < num/2; i++) {
         temp = (int) *(arr + num - i - 1);
         *(arr + num - i - 1) = *(arr + i);
         *(arr + i) = temp;
