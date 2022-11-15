@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+  int p, q;
+  scanf("%d", &p);
+
+  int total = 0;
+  for (int i = 0; i<p; i++) 
+  {
+    for (int j = 0; j<p; j++)
+    {
+      scanf("%d", &q);
+      if (i == j)
+        total =total+q;
+        
+      if (i == p-j-1)
+        total =total- q;
+    }
+  }
+  printf("%d", abs(total));
+  return 0;
+}
