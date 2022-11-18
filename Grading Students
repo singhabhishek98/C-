@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+    int n,g,m;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&g);
+        if(g<38)
+            printf("%d\n",g);
+        else
+        {
+            m=(g/5+1)*5;
+        
+        if(m-g<3)
+            printf("%d\n",m);
+         else 
+         {
+             printf("%d\n",g);
+         }
+        }
+     }
+    return 0;
+}
