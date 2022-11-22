@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() 
+{
+    int q,n;
+     char *a[10], *b[10];
+    
+     scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        char s[10];
+        scanf("%s", s); 
+        a[i] = malloc(21);
+        strcpy(a[i], s);
+    }
+    scanf("%d", &q);
+    
+    for (int i=0; i<q; i++) {
+        int result=0, sum;
+        char s[10];
+        scanf("%s",s);
+        b[i] = malloc(21);
+        strcpy(b[i], s);
+        
+        for (int j=0; j<n; j++) {
+            sum = strcmp(b[i], a[j]);
+            if (sum== 0)result++;
+        }
+        printf("%d\n",result);
+    }
+    
+    return 0;
+}
