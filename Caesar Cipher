@@ -1,0 +1,36 @@
+#include <stdio.h>
+char* c(char s[], int k) 
+{
+    int i=0;
+    char arr1[26]="abcdefghijklmnopqrstuvwxyz";
+    char arr2[26]="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for(i=0;s[i]!='0';++i)
+    {
+        if(s[i]<='z'&&s[i]>='a')
+        {
+            if(s[i]+k<='z')
+                s[i]=s[i]+k;
+            else
+                s[i]=arr1[(s[i]-'a'+k)%26];
+        }
+        else if(s[i]<='Z'&&s[i]>='A')
+        {
+            if(s[i]+k<='Z')
+                s[i]=s[i]+k;
+            else
+                s[i]=arr2[(s[i]-'A'+k)%26];
+        }
+    }
+    return s;
+}
+int main()
+{
+    int n,k;
+    scanf("%d",&n);
+    char s[105];
+    scanf("%s",s);
+    scanf("%d",&k);
+    c(s,k); 
+    printf("%s\n",s);
+    return 0;
+}
