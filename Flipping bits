@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() 
+{
+ int n;
+            
+    scanf("%d\n", &n);
+    for ( ; n>0; n--)
+    {
+        unsigned int num;
+        scanf("%u\n", &num);
+        printf("%u\n", ~num);
+    }
+    return 0;
+}
