@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void update(int *a,int *b) {
-    // Complete this function
+    
     int sum = *a + *b;
     int absDifference = *a - *b > 0 ? *a - *b : -(*a - *b);
     *a = sum;
