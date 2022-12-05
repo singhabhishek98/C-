@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int m,n,p,q; 
+    int a=0;
+    
+    scanf("%d %d %d %d",&m,&n,&p,&q);
+    int d1=m, d2=p;
+    
+    if (d1 == d2) 
+    {
+        a=1;
+    }
+    
+    for (int i = 0; a==0 && d1<=d2; i++) 
+    {
+        d1 += n;
+        d2 += q;
+        
+        if (d1 == d2) 
+        {
+            a=1;
+            break;
+        }
+    }
+    
+    if (a==1) 
+    {
+        printf("YES");
+    }
+    else {
+        printf("NO");
+    }
+    
+    return 0;
+}
